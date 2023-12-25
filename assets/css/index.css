@@ -1,0 +1,104 @@
+button:focus-visible {
+  box-shadow: 0 0 0 0.25rem hsl(292, 16%, 49%);
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+}
+
+#faqs {
+  background: hsl(275, 100%, 97%) url(../images/background-pattern-mobile.svg) top left/100% auto no-repeat scroll border-box border-box;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+@media (min-width: 376px) {
+  #faqs {
+    background-image: url(../images/background-pattern-desktop.svg);
+  }
+}
+#faqs .faqs__content {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.5rem;
+  width: 87.2%;
+  max-width: 37.5rem;
+  margin-top: 8.9375rem;
+  padding: 1.5rem;
+  box-shadow: 0 0 0 1px rgba(140, 105, 145, 0.1);
+}
+@media (min-width: 376px) {
+  #faqs .faqs__content {
+    margin-top: 10.5rem;
+  }
+}
+@media (min-width: 376px) {
+  #faqs .faqs__content {
+    padding: 2.25rem;
+  }
+}
+#faqs .faqs__content .faqs__heading {
+  background: transparent url(../images/icon-star.svg) center left/1.375rem 1.375rem no-repeat scroll border-box border-box;
+  color: hsl(292, 42%, 14%);
+  font-size: 2rem;
+  padding-left: 3.125rem;
+}
+@media (min-width: 376px) {
+  #faqs .faqs__content .faqs__heading {
+    background-size: 2rem 2rem;
+  }
+}
+@media (min-width: 376px) {
+  #faqs .faqs__content .faqs__heading {
+    font-size: 2.75rem;
+  }
+}
+@media (min-width: 376px) {
+  #faqs .faqs__content .faqs__heading {
+    padding-left: 4.25rem;
+  }
+}
+#faqs .faqs__content .asks .row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.275rem 0;
+  text-align: start;
+}
+#faqs .faqs__content .asks .row .ask {
+  color: hsl(292, 42%, 14%);
+  font-weight: 600;
+  width: 80%;
+}
+@media (min-width: 376px) {
+  #faqs .faqs__content .asks .row .ask {
+    width: auto;
+  }
+}
+#faqs .faqs__content .asks .row:hover .ask {
+  color: hsl(280.92, 82.98%, 53.92%);
+}
+#faqs .faqs__content .asks .row .img {
+  border-radius: 50%;
+}
+#faqs .faqs__content .asks .anser {
+  color: hsl(292, 16%, 49%);
+  margin-bottom: 2.875rem;
+  line-height: 1.5;
+}
+#faqs .faqs__content .asks .anser.hidden {
+  display: none;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  font-style: italic;
+  src: url(../fonts/WorkSans-Italic-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  src: url(../fonts/WorkSans-VariableFont_wght.ttf);
+}/*# sourceMappingURL=index.css.map */

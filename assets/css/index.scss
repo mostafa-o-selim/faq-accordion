@@ -1,0 +1,113 @@
+$colors: (
+  "white": hsl(0, 0%, 100%),
+  "light_pink": hsl(275, 100%, 97%),
+  "grayish_purple": hsl(292, 16%, 49%),
+  "dark_purple": hsl(292, 42%, 14%)
+);
+
+@mixin desktop($p, $v) {
+  @media (min-width: 376px) {
+    & {
+      #{$p}: $v;
+    }
+  }
+}
+
+button:focus-visible {
+  box-shadow: 0 0 0 0.25rem map-get($colors, "grayish_purple");
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+}
+
+#faqs {
+  background: map-get($colors, "light_pink") url(../images/background-pattern-mobile.svg) top left / 100% auto no-repeat scroll border-box border-box;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  @include desktop(background-image, url(../images/background-pattern-desktop.svg));
+
+  .faqs__content {
+    background-color: map-get($colors, "white");
+    border-radius: 0.5rem;
+    width: 87.2%;
+    max-width: 37.5rem;
+    margin-top: 8.9375rem;
+    padding: 1.5rem;
+    box-shadow: 0 0 0 1px rgba(map-get($colors, "grayish_purple"), 0.1);
+
+    @include desktop(margin-top, 10.5rem);
+    @include desktop(padding, 2.25rem);
+
+    .faqs__heading {
+      background: transparent url(../images/icon-star.svg) center left / 1.375rem 1.375rem no-repeat scroll border-box border-box;
+      color: map-get($colors, "dark_purple");
+      font-size: 2rem;
+      padding-left: 3.125rem;
+
+
+      @include desktop(background-size, 2rem 2rem);
+      @include desktop(font-size, 2.75rem);
+      @include desktop(padding-left, 4.25rem);
+    }
+
+    .asks {
+
+      .row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1.275rem 0;
+        text-align: start;
+
+
+        .ask {
+          color: map-get($colors, "dark_purple");
+          font-weight: 600;
+          width: 80%;
+          @include desktop(width, auto);
+        }
+
+        &:hover .ask {
+          color: hsl(280.92deg 82.98% 53.92%);
+        }
+
+        .img {
+          border-radius: 50%;
+        }
+
+      }
+
+      .anser {
+        color: map-get($colors, "grayish_purple");
+        margin-bottom: 2.875rem;
+        line-height: 1.5;
+
+        &.hidden {
+          display: none;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-style: italic;
+  src: url(../fonts/WorkSans-Italic-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  src: url(../fonts/WorkSans-VariableFont_wght.ttf);
+}

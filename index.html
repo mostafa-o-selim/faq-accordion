@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | FAQ accordion</title>
+  <link rel="stylesheet" href="assets/css/style.min.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      position: fixed;
+      inset: auto 0 0;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+
+    <section id="faqs">
+
+      <article class="faqs__content">
+
+        <h1 class="faqs__heading">FAQs</h1>
+
+        <div class="asks">
+          <button type="button" class="row">
+            <p class="ask">What is Frontend Mentor, and how will it help me?</p>
+            <img src="assets/images/icon-minus.svg" alt="Minus" class="img">
+          </button>
+
+          <p class="anser">Frontend Mentor offers realistic coding challenges to help developers improve their frontend
+            coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for
+            portfolio
+            building.</p>
+
+        </div>
+
+        <div class="asks">
+          <button type="button" class="row">
+            <p class="ask">Is Frontend Mentor free?</p>
+            <img src="assets/images/icon-plus.svg" alt="Plus" class="img">
+          </button>
+
+          <p class="anser hidden">Yes, Frontend Mentor offers both free and premium coding challenges, with the free
+            option providing access to a range of projects suitable for all skill levels.</p>
+
+        </div>
+
+        <div class="asks">
+          <button type="button" class="row">
+            <p class="ask">Can I use Frontend Mentor projects in my portfolio?</p>
+            <img src="assets/images/icon-plus.svg" alt="Plus" class="img">
+          </button>
+
+          <p class="anser hidden">Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an
+            excellent
+            way to showcase your skills to potential employers!</p>
+
+        </div>
+
+        <div class="asks">
+          <button type="button" class="row">
+            <p class="ask">How can I get help if I'm stuck on a Frontend Mentor challenge?</p>
+            <img src="assets/images/icon-plus.svg" alt="Plus" class="img">
+          </button>
+
+          <p class="anser hidden">The best place to get help is inside Frontend Mentor's Discord community. There's a
+            help
+            channel where you can ask questions and seek support from other community members.</p>
+
+        </div>
+
+      </article>
+
+    </section>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+
+  </main>
+
+  <script>
+    const controls = document.querySelectorAll(".row"),
+      ansers = document.querySelectorAll(".anser");
+
+    for (let i = 0; i < controls.length; i++) {
+
+      let anserID = `anser_${i}`;
+
+      controls[i].ariaLabel = controls[i].children[0].innerHTML;
+      controls[i].setAttribute("aria-controls", anserID);
+      controls[i].ariaExpanded = false;
+      ansers[i].id = anserID;
+
+      controls[i].addEventListener("click", function () {
+        ansers[i].classList.toggle("hidden");
+
+        if (controls[i].ariaExpanded == "true") {
+          controls[i].children[1].src = "assets/images/icon-plus.svg";
+          controls[i].children[1].alt = "Plus";
+          controls[i].ariaExpanded = false;
+        } else {
+          controls[i].children[1].src = "assets/images/icon-minus.svg";
+          controls[i].children[1].alt = "Minus";
+          controls[i].ariaExpanded = true;
+        }
+      });
+
+    }
+
+    controls[0].ariaExpanded = true;
+
+  </script>
+
+</body>
+
+</html>
